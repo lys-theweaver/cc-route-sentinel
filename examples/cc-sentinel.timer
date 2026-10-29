@@ -1,0 +1,10 @@
+[Unit]
+Description=Run cc-route-sentinel every 15 seconds
+
+[Timer]
+OnBootSec=30s
+OnUnitActiveSec=15s
+AccuracySec=2s
+
+[Install]
+WantedBy=timers.target

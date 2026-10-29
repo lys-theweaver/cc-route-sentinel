@@ -1,0 +1,8 @@
+[Unit]
+Description=Watch Claude Code transcript for visible route drift and classifier stops
+
+[Service]
+Type=oneshot
+Environment=PYTHONPATH=/opt/cc-route-sentinel/src
+ExecStart=/usr/bin/python3 -m cc_route_sentinel.watch --binding /home/USER/.local/state/claude/forge_state.json --transcript-root /home/USER/.claude/projects/PROJECT --state /home/USER/.local/state/cc-sentinel/state.json --expected-model claude-opus-4-6 --json
+StandardOutput=append:/home/USER/.local/state/cc-sentinel/events.jsonl

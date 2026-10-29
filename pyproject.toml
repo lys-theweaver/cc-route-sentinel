@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cc-route-sentinel"
+version = "0.1.0"
+description = "Read-only Claude Code transcript detector for visible model-route drift and provider safety-classifier stops"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "cc-route-sentinel contributors"}]
+keywords = ["claude-code", "transcript", "model-routing", "classifier", "observability"]
+
+[project.urls]
+Repository = "https://github.com/lys-theweaver/cc-route-sentinel"
+Issues = "https://github.com/lys-theweaver/cc-route-sentinel/issues"
+
+[project.scripts]
+cc-sentinel = "cc_route_sentinel.cli:main"
+cc-sentinel-watch = "cc_route_sentinel.watch:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
